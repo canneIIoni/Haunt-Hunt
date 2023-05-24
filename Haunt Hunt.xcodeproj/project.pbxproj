@@ -1,0 +1,384 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8145D0442A0F2530003C4D9D /* InvestigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8145D0432A0F2530003C4D9D /* InvestigatorView.swift */; };
+		8145D0462A0F3399003C4D9D /* EntityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8145D0452A0F3399003C4D9D /* EntityView.swift */; };
+		8145D0482A0F33E8003C4D9D /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8145D0472A0F33E8003C4D9D /* TutorialView.swift */; };
+		81484F432A0F110400073E83 /* Haunt_HuntApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81484F422A0F110400073E83 /* Haunt_HuntApp.swift */; };
+		81484F452A0F110400073E83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81484F442A0F110400073E83 /* ContentView.swift */; };
+		81484F472A0F110600073E83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81484F462A0F110600073E83 /* Assets.xcassets */; };
+		81484F4A2A0F110600073E83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81484F492A0F110600073E83 /* Preview Assets.xcassets */; };
+		81495C5B2A12D10400C3973F /* GhoulFriAOE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81495C5A2A12D10400C3973F /* GhoulFriAOE.ttf */; };
+		81495C5F2A169DA500C3973F /* PreviousView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81495C5E2A169DA500C3973F /* PreviousView.swift */; };
+		81495C652A17E87500C3973F /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81495C642A17E87500C3973F /* Buttons.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8145D03D2A0F1CFA003C4D9D /* Haunt-Hunt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Haunt-Hunt-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8145D0432A0F2530003C4D9D /* InvestigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestigatorView.swift; sourceTree = "<group>"; };
+		8145D0452A0F3399003C4D9D /* EntityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityView.swift; sourceTree = "<group>"; };
+		8145D0472A0F33E8003C4D9D /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		81484F3F2A0F110400073E83 /* Haunt Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Haunt Hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81484F422A0F110400073E83 /* Haunt_HuntApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haunt_HuntApp.swift; sourceTree = "<group>"; };
+		81484F442A0F110400073E83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		81484F462A0F110600073E83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81484F492A0F110600073E83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		81495C5A2A12D10400C3973F /* GhoulFriAOE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GhoulFriAOE.ttf; path = "Haunt Hunt/Assets.xcassets/GhoulFriAOE.ttf"; sourceTree = SOURCE_ROOT; };
+		81495C5E2A169DA500C3973F /* PreviousView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousView.swift; sourceTree = "<group>"; };
+		81495C642A17E87500C3973F /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81484F3C2A0F110400073E83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8145D0402A0F1F0B003C4D9D /* project_fonts */ = {
+			isa = PBXGroup;
+			children = (
+				81495C5A2A12D10400C3973F /* GhoulFriAOE.ttf */,
+			);
+			path = project_fonts;
+			sourceTree = "<group>";
+		};
+		81484F362A0F110400073E83 = {
+			isa = PBXGroup;
+			children = (
+				8145D0402A0F1F0B003C4D9D /* project_fonts */,
+				81484F412A0F110400073E83 /* Haunt Hunt */,
+				81484F402A0F110400073E83 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81484F402A0F110400073E83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81484F3F2A0F110400073E83 /* Haunt Hunt.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81484F412A0F110400073E83 /* Haunt Hunt */ = {
+			isa = PBXGroup;
+			children = (
+				8145D03D2A0F1CFA003C4D9D /* Haunt-Hunt-Info.plist */,
+				81484F422A0F110400073E83 /* Haunt_HuntApp.swift */,
+				81484F442A0F110400073E83 /* ContentView.swift */,
+				8145D0472A0F33E8003C4D9D /* TutorialView.swift */,
+				8145D0452A0F3399003C4D9D /* EntityView.swift */,
+				8145D0432A0F2530003C4D9D /* InvestigatorView.swift */,
+				81495C642A17E87500C3973F /* Buttons.swift */,
+				81495C5E2A169DA500C3973F /* PreviousView.swift */,
+				81484F462A0F110600073E83 /* Assets.xcassets */,
+				81484F482A0F110600073E83 /* Preview Content */,
+			);
+			path = "Haunt Hunt";
+			sourceTree = "<group>";
+		};
+		81484F482A0F110600073E83 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				81484F492A0F110600073E83 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81484F3E2A0F110400073E83 /* Haunt Hunt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81484F4D2A0F110600073E83 /* Build configuration list for PBXNativeTarget "Haunt Hunt" */;
+			buildPhases = (
+				81484F3B2A0F110400073E83 /* Sources */,
+				81484F3C2A0F110400073E83 /* Frameworks */,
+				81484F3D2A0F110400073E83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Haunt Hunt";
+			productName = "Haunt Hunt";
+			productReference = 81484F3F2A0F110400073E83 /* Haunt Hunt.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81484F372A0F110400073E83 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					81484F3E2A0F110400073E83 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 81484F3A2A0F110400073E83 /* Build configuration list for PBXProject "Haunt Hunt" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 81484F362A0F110400073E83;
+			productRefGroup = 81484F402A0F110400073E83 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81484F3E2A0F110400073E83 /* Haunt Hunt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81484F3D2A0F110400073E83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81484F4A2A0F110600073E83 /* Preview Assets.xcassets in Resources */,
+				81484F472A0F110600073E83 /* Assets.xcassets in Resources */,
+				81495C5B2A12D10400C3973F /* GhoulFriAOE.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81484F3B2A0F110400073E83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81495C652A17E87500C3973F /* Buttons.swift in Sources */,
+				81484F452A0F110400073E83 /* ContentView.swift in Sources */,
+				8145D0442A0F2530003C4D9D /* InvestigatorView.swift in Sources */,
+				81484F432A0F110400073E83 /* Haunt_HuntApp.swift in Sources */,
+				81495C5F2A169DA500C3973F /* PreviousView.swift in Sources */,
+				8145D0482A0F33E8003C4D9D /* TutorialView.swift in Sources */,
+				8145D0462A0F3399003C4D9D /* EntityView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		81484F4B2A0F110600073E83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		81484F4C2A0F110600073E83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		81484F4E2A0F110600073E83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Haunt Hunt/Preview Content\"";
+				DEVELOPMENT_TEAM = 3XAB48JYXN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Haunt-Hunt-Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We want to scan beacons";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We want to use beacons";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We want to scan beacons";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Luca.Haunt-Hunt";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		81484F4F2A0F110600073E83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Haunt Hunt/Preview Content\"";
+				DEVELOPMENT_TEAM = 3XAB48JYXN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Haunt-Hunt-Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We want to scan beacons";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We want to use beacons";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We want to scan beacons";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Luca.Haunt-Hunt";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81484F3A2A0F110400073E83 /* Build configuration list for PBXProject "Haunt Hunt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81484F4B2A0F110600073E83 /* Debug */,
+				81484F4C2A0F110600073E83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81484F4D2A0F110600073E83 /* Build configuration list for PBXNativeTarget "Haunt Hunt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81484F4E2A0F110600073E83 /* Debug */,
+				81484F4F2A0F110600073E83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 81484F372A0F110400073E83 /* Project object */;
+}
