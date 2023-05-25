@@ -93,7 +93,7 @@ struct TutorialView: View {
                                 .padding(.horizontal)
                             
                             Spacer()
-                        }
+                        }.padding(.bottom, 50)
                     }
                 }
             }
