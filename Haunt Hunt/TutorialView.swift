@@ -22,12 +22,15 @@ struct TutorialView: View {
                 
                 if !returnToggle{
                     PreviousView()
+                        .transition(.opacity)
                 }
                 else{
                     
                     HStack {
                         Button {
+                            withAnimation{
                                 returnToggle.toggle()
+                            }
                             }
                         label:{
                             Image(systemName: "chevron.left")
@@ -71,7 +74,19 @@ struct TutorialView: View {
                                 .padding(.horizontal)
                                 .padding(.top)
                             
-                            Text("The entity is a paranormal creature.\n In the first phase, PREPARATION,\n it is given 2 minutes to hide from the Investigators.\n After that, it must remain hidden and growing its supernatural powers until the second phase, INVESTIGATION,\n is over. If it fails to do so, the Investigators win.\nIn the next phase, HUNT, ")
+                            Text("The Entity is a paranormal creature.\n In the first phase, PREPARATION,\n it is given 2 minutes to hide from the Investigators.\n After that, it must remain hidden and growing its supernatural powers until the second phase, INVESTIGATION,\n is over. If it fails to do so, the Investigators win.\nIn the next phase, HUNT,\n the Entity must hunt down the Investigators")
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.white)
+                                .font(Font.custom("GhoulishFrightAOE", size: 25))
+                                .padding(.horizontal)
+                            
+                            Text("INVESTIGATOR:")
+                                .foregroundColor(.white)
+                                .font(Font.custom("GhoulishFrightAOE", size: 30))
+                                .padding(.horizontal)
+                                .padding(.top)
+                            
+                            Text("The Investigators are paranormal researchers.\n In the first phase, PREPARATION,\n they have to wait 2 minutes while they prepare to investigate.\n After that, in the second phase, INVESTIGATION, they must search for the Entity and find it before its supernatural powers grow too powerful. If they fail to do so, the next phase, HUNT, starts.\n The Investigators must now hide from the Entity")
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
                                 .font(Font.custom("GhoulishFrightAOE", size: 25))

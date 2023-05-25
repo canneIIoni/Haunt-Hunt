@@ -106,7 +106,7 @@ struct InvestigatorView: View {
                                     .resizable()
                                     .foregroundColor(.purple)
                                     .frame(width: 12, height: 21)
-                                    .padding(.top, screenHeight/18)
+                                    .padding(.top, screenHeight/25)
                                     .padding(.leading)
                             }
                             .alert(isPresented: $showAlert) {
