@@ -11,7 +11,7 @@ import SwiftUI
 struct Haunt_HuntApp: App {
     var body: some Scene {
         WindowGroup {
-            PreviousView()
+            PreviousView(entityToggle: false, investigatorToggle: false)
                 .preferredColorScheme(.dark)
         }
     }

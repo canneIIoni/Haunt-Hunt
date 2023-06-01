@@ -1,8 +1,8 @@
 //
-//  EntityView.swift
+//  EntityLinkView.swift
 //  Haunt Hunt
 //
-//  Created by Luca on 12/05/23.
+//  Created by Luca on 31/05/23.
 //
 
 import SwiftUI
@@ -10,7 +10,7 @@ import CoreLocation
 import CoreBluetooth
 
 //classe para o detector de beacons
-class BeaconDetector: NSObject, ObservableObject, CLLocationManagerDelegate {
+class BeaconDetectorEntityLink: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
 
     @Published var lastDistance: CLProximity = .unknown
@@ -62,13 +62,15 @@ class BeaconDetector: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
 }
 
-struct EntityView: View {
+struct EntityLinkView: View {
     
     @Environment(\.presentationMode) var isPresented
     
+    @Binding var entityToggle:Bool
+    @State private var emmitToggle = false
     @State private var isButtonVisible = true
     @State private var returnToggle = true
-    @StateObject var detector = BeaconDetector()
+    @StateObject var detector = BeaconDetectorEntityLink()
     @State var countdownTimer = 300 //segundos do segundo timer
     @State var countdownHideTimer = 12 //segundos do timer de preparação
     @State var timerRunning = false //toggle do segundo timer
@@ -84,7 +86,7 @@ struct EntityView: View {
         let beaconRegionIdentifier = "com.yourcompany.yourapp"
         let beaconMajorValue: CLBeaconMajorValue = 100
         let beaconMinorValue: CLBeaconMinorValue = 50
-        let beaconManager = BeaconManager()
+        let beaconManagerEntity = BeaconManagerLinkEntity()
         VStack{
             ZStack {
                 Image("background")
@@ -93,8 +95,12 @@ struct EntityView: View {
                     .aspectRatio(contentMode: .fill)
                 
                 if !returnToggle {
-                    PreviousView()
+                    PreviousView(entityToggle: entityToggle, investigatorToggle: false)
                         .transition(.opacity)
+                        .onAppear {
+                            beaconManagerEntity.stopTransmitting()
+                            
+                        }
                 }else{
                     HStack{
                         VStack{
@@ -121,9 +127,15 @@ struct EntityView: View {
                                         withAnimation{
                                             // Action for Option 2
                                             returnToggle.toggle()
+                                            emmitToggle = false
+                                            entityToggle = false
+                                            beaconManagerEntity.stopTransmitting()
                                         }
                                     })
                                 )
+                            }.onDisappear {
+                                beaconManagerEntity.stopTransmitting()
+                                
                             }
                                 
                                 Spacer()
@@ -138,7 +150,7 @@ struct EntityView: View {
                                     .opacity(0.3)
                             }
                             else if countdownHideTimer <= 0{
-                                if detector.lastDistance.description == "UNKNOWN"{
+                                if detector.lastDistance.descriptionEntityLink == "UNKNOWN"{
                                     Image("pentagram")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
@@ -147,7 +159,7 @@ struct EntityView: View {
                                         .offset(y: -150)
                                         .opacity(0.3)
                                 }
-                                else if detector.lastDistance.description == "FAR"{
+                                else if detector.lastDistance.descriptionEntityLink == "FAR"{
                                     Image("pentagram")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
@@ -157,7 +169,7 @@ struct EntityView: View {
                                         .opacity(0.5)
                                     
                                 }
-                                else if detector.lastDistance.description == "NEAR"{
+                                else if detector.lastDistance.descriptionEntityLink == "NEAR"{
                                     Image("pentagram")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
@@ -167,7 +179,7 @@ struct EntityView: View {
                                         .opacity(0.7)
                                     
                                 }
-                                else if detector.lastDistance.description == "IMMEDIATE"{
+                                else if detector.lastDistance.descriptionEntityLink == "IMMEDIATE"{
                                     Image("pentagram")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
@@ -283,6 +295,7 @@ struct EntityView: View {
                                 timerHideRunning = true
                                 timerRunning = true
                                 isButtonVisible = false
+                                emmitToggle = true
                             } label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 15)
@@ -327,10 +340,15 @@ struct EntityView: View {
                 
             }
             .onAppear {
-                beaconManager.startTransmitting()
+                if emmitToggle{
+                    beaconManagerEntity.startTransmitting()
+                }
+                else {
+                    beaconManagerEntity.stopTransmitting()
+                }
             }
             .onDisappear {
-                beaconManager.stopTransmitting()
+                beaconManagerEntity.stopTransmitting()
                 
             }
         }
@@ -339,7 +357,7 @@ struct EntityView: View {
 
 
 extension CLProximity {
-    var color: Color {
+    var colorEntityLink: Color {
         switch self {
         case .immediate:
             return .red
@@ -352,7 +370,7 @@ extension CLProximity {
         }
     }
 
-    var description: String {
+    var descriptionEntityLink: String {
         switch self {
         case .immediate:
             return "IMMEDIATE"
@@ -366,7 +384,7 @@ extension CLProximity {
     }
 }
 
-class BeaconManager: NSObject, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
+class BeaconManagerLinkEntity: NSObject, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
     let locationManager = CLLocationManager()
     var peripheralManager: CBPeripheralManager?
     var beaconUUID: UUID = UUID(uuidString: "598a7b3e-63b5-4a0c-a52a-d3e3bde20d09")!
@@ -444,8 +462,8 @@ class BeaconManager: NSObject, CLLocationManagerDelegate, CBPeripheralManagerDel
     }
 }
 
-struct EntityView_Previews: PreviewProvider {
+struct EntityLinkView_Previews: PreviewProvider {
     static var previews: some View {
-        EntityView()
+        EntityLinkView(entityToggle: .constant(false))
     }
 }

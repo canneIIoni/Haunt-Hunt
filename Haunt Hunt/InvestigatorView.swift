@@ -63,6 +63,8 @@ class BeaconDetectorInvestigator: NSObject, ObservableObject, CLLocationManagerD
 
 struct InvestigatorView: View {
     
+    @Binding var investigatorToggle:Bool
+    @State private var emmitToggle = false
     @State private var returnToggle = true
     @State private var isButtonVisible = true
     @StateObject var detector = BeaconDetectorInvestigator()
@@ -92,14 +94,19 @@ struct InvestigatorView: View {
             VStack{
                 ZStack {
                     if !returnToggle {
-                        PreviousView()
+                        PreviousView(entityToggle: false, investigatorToggle: investigatorToggle)
                             .transition(.opacity)
+                            .onAppear {
+                                beaconManager.stopTransmitting()
+                                
+                            }
                     }
                     else{
                         VStack{
                             HStack {
                                 Button {
                                     showAlert.toggle()
+                                    
                                 }
                             label:{
                                 Image(systemName: "chevron.left")
@@ -119,11 +126,16 @@ struct InvestigatorView: View {
                                     secondaryButton: .destructive(Text("Yes"), action: {
                                         withAnimation{
                                             // Action for Option 2
+                                            investigatorToggle = false
+                                            emmitToggle = false
                                             returnToggle.toggle()
-                                            
+                                            beaconManager.stopTransmitting()
                                         }
                                     })
                                 )
+                            }.onDisappear {
+                                beaconManager.stopTransmitting()
+                                
                             }
                               
                                 
@@ -305,6 +317,7 @@ struct InvestigatorView: View {
                             
                             if isButtonVisible == true {
                                 Button {
+                                    emmitToggle = true
                                     timerHideRunning = true
                                     timerRunning = true
                                     isButtonVisible = false
@@ -351,8 +364,12 @@ struct InvestigatorView: View {
                     }//VStack end
                     
                         .onAppear {
-                            beaconManager.startTransmitting()
-                            
+                            if emmitToggle{
+                                beaconManager.startTransmitting()
+                            }
+                            else {
+                                beaconManager.stopTransmitting()
+                            }
                         }
                         .onDisappear {
                             beaconManager.stopTransmitting()
@@ -471,6 +488,6 @@ class BeaconManagerInvestigator: NSObject, CLLocationManagerDelegate, CBPeripher
 
 struct InvestigatorView_Previews: PreviewProvider {
     static var previews: some View {
-        InvestigatorView()
+        InvestigatorView(investigatorToggle: .constant(false))
     }
 }

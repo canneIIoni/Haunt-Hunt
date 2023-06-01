@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		810CB7732A27C706006225F4 /* EntityLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CB7722A27C706006225F4 /* EntityLinkView.swift */; };
 		8145D0442A0F2530003C4D9D /* InvestigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8145D0432A0F2530003C4D9D /* InvestigatorView.swift */; };
-		8145D0462A0F3399003C4D9D /* EntityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8145D0452A0F3399003C4D9D /* EntityView.swift */; };
 		8145D0482A0F33E8003C4D9D /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8145D0472A0F33E8003C4D9D /* TutorialView.swift */; };
 		81484F432A0F110400073E83 /* Haunt_HuntApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81484F422A0F110400073E83 /* Haunt_HuntApp.swift */; };
-		81484F452A0F110400073E83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81484F442A0F110400073E83 /* ContentView.swift */; };
 		81484F472A0F110600073E83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81484F462A0F110600073E83 /* Assets.xcassets */; };
 		81484F4A2A0F110600073E83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81484F492A0F110600073E83 /* Preview Assets.xcassets */; };
 		81495C5B2A12D10400C3973F /* GhoulFriAOE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81495C5A2A12D10400C3973F /* GhoulFriAOE.ttf */; };
@@ -20,13 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		810CB7722A27C706006225F4 /* EntityLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityLinkView.swift; sourceTree = "<group>"; };
 		8145D03D2A0F1CFA003C4D9D /* Haunt-Hunt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Haunt-Hunt-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8145D0432A0F2530003C4D9D /* InvestigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestigatorView.swift; sourceTree = "<group>"; };
-		8145D0452A0F3399003C4D9D /* EntityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityView.swift; sourceTree = "<group>"; };
 		8145D0472A0F33E8003C4D9D /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		81484F3F2A0F110400073E83 /* Haunt Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Haunt Hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81484F422A0F110400073E83 /* Haunt_HuntApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haunt_HuntApp.swift; sourceTree = "<group>"; };
-		81484F442A0F110400073E83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		81484F462A0F110600073E83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81484F492A0F110600073E83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		81495C5A2A12D10400C3973F /* GhoulFriAOE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GhoulFriAOE.ttf; path = "Haunt Hunt/Assets.xcassets/GhoulFriAOE.ttf"; sourceTree = SOURCE_ROOT; };
@@ -75,12 +73,11 @@
 			children = (
 				8145D03D2A0F1CFA003C4D9D /* Haunt-Hunt-Info.plist */,
 				81484F422A0F110400073E83 /* Haunt_HuntApp.swift */,
-				81484F442A0F110400073E83 /* ContentView.swift */,
 				8145D0472A0F33E8003C4D9D /* TutorialView.swift */,
-				8145D0452A0F3399003C4D9D /* EntityView.swift */,
 				8145D0432A0F2530003C4D9D /* InvestigatorView.swift */,
 				81495C642A17E87500C3973F /* Buttons.swift */,
 				81495C5E2A169DA500C3973F /* PreviousView.swift */,
+				810CB7722A27C706006225F4 /* EntityLinkView.swift */,
 				81484F462A0F110600073E83 /* Assets.xcassets */,
 				81484F482A0F110600073E83 /* Preview Content */,
 			);
@@ -167,12 +164,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				81495C652A17E87500C3973F /* Buttons.swift in Sources */,
-				81484F452A0F110400073E83 /* ContentView.swift in Sources */,
 				8145D0442A0F2530003C4D9D /* InvestigatorView.swift in Sources */,
 				81484F432A0F110400073E83 /* Haunt_HuntApp.swift in Sources */,
 				81495C5F2A169DA500C3973F /* PreviousView.swift in Sources */,
+				810CB7732A27C706006225F4 /* EntityLinkView.swift in Sources */,
 				8145D0482A0F33E8003C4D9D /* TutorialView.swift in Sources */,
-				8145D0462A0F3399003C4D9D /* EntityView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

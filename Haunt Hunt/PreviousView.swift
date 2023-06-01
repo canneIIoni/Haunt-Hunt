@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PreviousView: View {
    
+    @State var entityToggle:Bool = true
+    @State var investigatorToggle:Bool = true
     @State private var showWarning = false
     @State private var isEntityButtonVisible = true
     @State private var isInvestigatorButtonVisible = true
@@ -30,8 +32,13 @@ struct PreviousView: View {
                 VStack{
                     
                     if isEntityButtonVisible == false {
-                        EntityView()
-                            .transition(.opacity)
+                        if entityToggle{
+                            EntityLinkView(entityToggle: $entityToggle)
+                                .transition(.opacity)
+                                .onDisappear{
+                                    isEntityButtonVisible = true
+                                }
+                        }
                     }
                     else if isInvestigatorButtonVisible == true && isHowButtonVisible == true{
                         
@@ -44,6 +51,7 @@ struct PreviousView: View {
                             withAnimation{
                                 isEntityButtonVisible = false
                             }
+                            entityToggle = true
                         }label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 25)
@@ -71,14 +79,21 @@ struct PreviousView: View {
                     }
                     
                     if isInvestigatorButtonVisible == false{
-                        InvestigatorView()
-                            .transition(.opacity)
+                        if investigatorToggle{
+                            InvestigatorView(investigatorToggle: $investigatorToggle)
+                                .transition(.opacity)
+                                .onDisappear{
+                                    isInvestigatorButtonVisible = true
+                                }
+                        }
+                            
                     }
                     else if isEntityButtonVisible == true && isHowButtonVisible == true{
                         Button{
                             withAnimation{
                                 isInvestigatorButtonVisible = false
                             }
+                            investigatorToggle = true
                         }label: {
                             VStack {
                                 Spacer()
@@ -143,7 +158,7 @@ struct PreviousView: View {
 
 struct PreviousView_Previews: PreviewProvider {
     static var previews: some View {
-        PreviousView()
+        PreviousView(entityToggle: false, investigatorToggle: false)
     }
 }
 

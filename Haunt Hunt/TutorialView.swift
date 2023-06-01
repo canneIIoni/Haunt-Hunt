@@ -21,7 +21,7 @@ struct TutorialView: View {
             VStack {
                 
                 if !returnToggle{
-                    PreviousView()
+                    PreviousView(entityToggle: false, investigatorToggle: false)
                         .transition(.opacity)
                 }
                 else{
