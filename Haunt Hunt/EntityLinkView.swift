@@ -94,9 +94,8 @@ struct EntityLinkView: View {
                     .ignoresSafeArea()
                     .aspectRatio(contentMode: .fill)
                 
-                if !returnToggle {
+                if !entityToggle {
                     PreviousView(entityToggle: entityToggle, investigatorToggle: false)
-                        .transition(.opacity)
                         .onAppear {
                             beaconManagerEntity.stopTransmitting()
                             
@@ -124,13 +123,13 @@ struct EntityLinkView: View {
                                         
                                     }),
                                     secondaryButton: .destructive(Text("Yes"), action: {
-                                        withAnimation{
                                             // Action for Option 2
+                                            entityToggle = false
                                             returnToggle.toggle()
                                             emmitToggle = false
-                                            entityToggle = false
+                                            
                                             beaconManagerEntity.stopTransmitting()
-                                        }
+                                        
                                     })
                                 )
                             }.onDisappear {

@@ -93,9 +93,8 @@ struct InvestigatorView: View {
             
             VStack{
                 ZStack {
-                    if !returnToggle {
+                    if !investigatorToggle {
                         PreviousView(entityToggle: false, investigatorToggle: investigatorToggle)
-                            .transition(.opacity)
                             .onAppear {
                                 beaconManager.stopTransmitting()
                                 
@@ -124,13 +123,14 @@ struct InvestigatorView: View {
                                         
                                     }),
                                     secondaryButton: .destructive(Text("Yes"), action: {
-                                        withAnimation{
+                                        
                                             // Action for Option 2
-                                            investigatorToggle = false
+                                            
                                             emmitToggle = false
                                             returnToggle.toggle()
                                             beaconManager.stopTransmitting()
-                                        }
+                                        
+                                        investigatorToggle = false
                                     })
                                 )
                             }.onDisappear {
