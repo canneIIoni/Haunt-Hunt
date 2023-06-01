@@ -50,8 +50,9 @@ struct PreviousView: View {
                         Button{
                             withAnimation{
                                 isEntityButtonVisible = false
+                                entityToggle = true
                             }
-                            entityToggle = true
+                            
                         }label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 25)
@@ -92,8 +93,9 @@ struct PreviousView: View {
                         Button{
                             withAnimation{
                                 isInvestigatorButtonVisible = false
+                                investigatorToggle = true
                             }
-                            investigatorToggle = true
+                            
                         }label: {
                             VStack {
                                 Spacer()
