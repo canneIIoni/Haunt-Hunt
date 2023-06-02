@@ -110,13 +110,21 @@ struct EntityLinkView: View {
                                         .resizable()
                                         .foregroundColor(.purple)
                                         .frame(width: 12, height: 21)
-                                        .padding(.top, screenHeight/5)
+                                        .padding(.top, screenHeight/4.5)
+                                        .padding(.leading)
+                                }else if screenHeight >= 926{
+                                    Image(systemName: "chevron.left")
+                                        .resizable()
+                                        .foregroundColor(.purple)
+                                        .frame(width: 12, height: 21)
+                                        .padding(.leading)
                                 }else{
                                     Image(systemName: "chevron.left")
                                         .resizable()
                                         .foregroundColor(.purple)
                                         .frame(width: 12, height: 21)
-                                        .padding(.top, screenHeight/18)
+                                        .padding(.top, screenHeight/25)
+                                        .padding(.leading)
                                 }
                                 
                             }.alert(isPresented: $showAlert) {
