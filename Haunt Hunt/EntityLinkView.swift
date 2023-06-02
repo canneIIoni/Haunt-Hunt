@@ -82,10 +82,6 @@ struct EntityLinkView: View {
     @State private var showAlert = false
 
     var body: some View {
-        let beaconUUID = UUID(uuidString: "598a7b3e-63b5-4a0c-a52a-d3e3bde20d09")!
-        let beaconRegionIdentifier = "com.yourcompany.yourapp"
-        let beaconMajorValue: CLBeaconMajorValue = 100
-        let beaconMinorValue: CLBeaconMinorValue = 50
         let beaconManagerEntity = BeaconManagerLinkEntity()
         VStack{
             ZStack {

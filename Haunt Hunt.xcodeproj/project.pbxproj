@@ -294,6 +294,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Haunt Hunt/Preview Content\"";
@@ -301,12 +302,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Haunt-Hunt-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Haunt Hunt";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We want to scan beacons";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We want to use beacons";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We want to scan beacons";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -329,6 +332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Haunt Hunt/Preview Content\"";
@@ -336,12 +340,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Haunt-Hunt-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Haunt Hunt";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We want to scan beacons";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We want to use beacons";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We want to scan beacons";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

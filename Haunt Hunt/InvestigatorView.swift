@@ -79,10 +79,6 @@ struct InvestigatorView: View {
     @State private var showAlert = false
 
     var body: some View {
-        let beaconUUID = UUID(uuidString: "F1C4EAC1-3E6B-4D46-8C8F-4E4CC9A89DCA")!
-        let beaconRegionIdentifier = "com.yourcompany.yourapp"
-        let beaconMajorValue: CLBeaconMajorValue = 100
-        let beaconMinorValue: CLBeaconMinorValue = 50
         let beaconManager = BeaconManagerInvestigator()
         ZStack {
             Image("emfbackground")
