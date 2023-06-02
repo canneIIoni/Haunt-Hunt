@@ -161,6 +161,7 @@ struct PreviousView: View {
 struct PreviousView_Previews: PreviewProvider {
     static var previews: some View {
         PreviousView(entityToggle: false, investigatorToggle: false)
+        
     }
 }
 

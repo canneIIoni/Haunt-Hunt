@@ -86,7 +86,7 @@ struct TutorialView: View {
                                 .padding(.horizontal)
                                 .padding(.top)
                             
-                            Text("\nThe Investigators are paranormal researchers.\n There can be as many investigators as deemed appropriate by the players.\n\nTo visualize the proximity between themselves and the entity, observe the number of lights that flicker on in the EMF. As they get closer, the number of lights that are on should increase")
+                            Text("\nThe Investigators are paranormal researchers.\n There can be as many investigators as deemed appropriate by the players.\n\nTo visualize the proximity between themselves and the entity, observe the number of lights that flicker on in the EMF. As they get closer, the number of lights that are on should increase.")
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
                                 .font(Font.custom("GhoulishFrightAOE", size: 25))
@@ -134,7 +134,7 @@ struct TutorialView: View {
                                     .padding(.horizontal)
                                     .padding(.top)
                                 
-                                Text("\nAfter the preparation stage, the countdown will automatically switch to the INVESTIGATION phase.\nIn this stage, the investigators must find the entity to win the game in under 5 minutes. If the entity remains unfound at the end of the investigation countdown, ")
+                                Text("\nAfter the preparation stage, the countdown will automatically switch to the INVESTIGATION phase.\nIn this stage, the investigators must find the entity to win the game in under 5 minutes. If the entity remains unfound at the end of the investigation countdown.")
                                     .multilineTextAlignment(.center)
                                     .foregroundColor(.white)
                                     .font(Font.custom("GhoulishFrightAOE", size: 25))

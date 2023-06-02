@@ -105,11 +105,19 @@ struct EntityLinkView: View {
                                    
                                 }
                             label:{
-                                Image(systemName: "chevron.left")
-                                    .resizable()
-                                    .foregroundColor(.purple)
-                                    .frame(width: 12, height: 21)
-                                    .padding(.top, screenHeight/18)
+                                if screenHeight<=667{
+                                    Image(systemName: "chevron.left")
+                                        .resizable()
+                                        .foregroundColor(.purple)
+                                        .frame(width: 12, height: 21)
+                                        .padding(.top, screenHeight/5)
+                                }else{
+                                    Image(systemName: "chevron.left")
+                                        .resizable()
+                                        .foregroundColor(.purple)
+                                        .frame(width: 12, height: 21)
+                                        .padding(.top, screenHeight/18)
+                                }
                                 
                             }.alert(isPresented: $showAlert) {
                                 Alert(
@@ -197,39 +205,68 @@ struct EntityLinkView: View {
                         
                     }.padding()
                     ZStack {
-                        if countdownHideTimer > 0{
-                            if countdownHideTimer != 1{
-                                Text("\(countdownHideTimer) seconds left to hide")
-                                
-                                    .onReceive(timerHide) { _ in
-                                        if countdownHideTimer > 0 && timerHideRunning {
-                                            countdownHideTimer -= 1
-                                        } else {
-                                            timerHideRunning = false
+                        if screenHeight<=667{
+                            if countdownHideTimer > 0{
+                                if countdownHideTimer != 1{
+                                    Text("\(countdownHideTimer) seconds left to hide")
+                                    
+                                        .onReceive(timerHide) { _ in
+                                            if countdownHideTimer > 0 && timerHideRunning {
+                                                countdownHideTimer -= 1
+                                            } else {
+                                                timerHideRunning = false
+                                            }
                                         }
-                                    }
-                                    .font(Font.custom("GhoulishFrightAOE", size: 30))
-                                    .foregroundColor(.white)
-                                    .offset(y: 200)
-                            } else {
-                                Text("\(countdownHideTimer) second left to hide")
-                                
-                                    .onReceive(timerHide) { _ in
-                                        if countdownHideTimer > 0 && timerHideRunning {
-                                            countdownHideTimer -= 1
-                                        } else {
-                                            timerHideRunning = false
+                                        .font(Font.custom("GhoulishFrightAOE", size: 30))
+                                        .foregroundColor(.white)
+                                        .offset(y: 180)
+                                } else {
+                                    Text("\(countdownHideTimer) second left to hide")
+                                    
+                                        .onReceive(timerHide) { _ in
+                                            if countdownHideTimer > 0 && timerHideRunning {
+                                                countdownHideTimer -= 1
+                                            } else {
+                                                timerHideRunning = false
+                                            }
                                         }
-                                    }
-                                    .font(Font.custom("GhoulishFrightAOE", size: 30))
-                                    .foregroundColor(.white)
-                                    .offset(y: 200)
+                                        .font(Font.custom("GhoulishFrightAOE", size: 30))
+                                        .foregroundColor(.white)
+                                        .offset(y: 180)
+                                }
                             }
-                        }
-                        else {
-                            
-                            if countdownTimer <=  30 && countdownTimer > 0{
-                                if countdownTimer != 1{
+                            else {
+                                
+                                if countdownTimer <=  30 && countdownTimer > 0{
+                                    if countdownTimer != 1{
+                                        Text("\(countdownTimer) seconds left")
+                                        
+                                            .onReceive(timer) { _ in
+                                                if countdownTimer > 0 && timerRunning {
+                                                    countdownTimer -= 1
+                                                } else {
+                                                    timerRunning = false
+                                                }
+                                            }
+                                            .font(Font.custom("GhoulishFrightAOE", size: 30))
+                                            .foregroundColor(.red)
+                                            .offset(y: 180)
+                                    }
+                                    else{
+                                        Text("\(countdownTimer) second left")
+                                        
+                                            .onReceive(timer) { _ in
+                                                if countdownTimer > 0 && timerRunning {
+                                                    countdownTimer -= 1
+                                                } else {
+                                                    timerRunning = false
+                                                }
+                                            }
+                                            .font(Font.custom("GhoulishFrightAOE", size: 30))
+                                            .foregroundColor(.red)
+                                            .offset(y: 180)
+                                    }
+                                } else if countdownTimer > 30{
                                     Text("\(countdownTimer) seconds left")
                                     
                                         .onReceive(timer) { _ in
@@ -240,12 +277,98 @@ struct EntityLinkView: View {
                                             }
                                         }
                                         .font(Font.custom("GhoulishFrightAOE", size: 30))
+                                        .foregroundColor(.white)
+                                        .offset(y: 180)
+                                } else {
+                                    Text("FIND THEM")
+                                        .onReceive(timer) { _ in
+                                            if countdownTimer > 0 && timerRunning {
+                                                countdownTimer -= 1
+                                            } else {
+                                                timerRunning = false
+                                            }
+                                        }
+                                        .font(Font.custom("GhoulishFrightAOE", size: 30))
                                         .foregroundColor(.red)
+                                        .offset(y: 180)
+                                }
+                            }
+                        }else{
+                            if countdownHideTimer > 0{
+                                if countdownHideTimer != 1{
+                                    Text("\(countdownHideTimer) seconds left to hide")
+                                    
+                                        .onReceive(timerHide) { _ in
+                                            if countdownHideTimer > 0 && timerHideRunning {
+                                                countdownHideTimer -= 1
+                                            } else {
+                                                timerHideRunning = false
+                                            }
+                                        }
+                                        .font(Font.custom("GhoulishFrightAOE", size: 30))
+                                        .foregroundColor(.white)
+                                        .offset(y: 200)
+                                } else {
+                                    Text("\(countdownHideTimer) second left to hide")
+                                    
+                                        .onReceive(timerHide) { _ in
+                                            if countdownHideTimer > 0 && timerHideRunning {
+                                                countdownHideTimer -= 1
+                                            } else {
+                                                timerHideRunning = false
+                                            }
+                                        }
+                                        .font(Font.custom("GhoulishFrightAOE", size: 30))
+                                        .foregroundColor(.white)
                                         .offset(y: 200)
                                 }
-                                else{
-                                    Text("\(countdownTimer) second left")
+                            }
+                            else {
+                                
+                                if countdownTimer <=  30 && countdownTimer > 0{
+                                    if countdownTimer != 1{
+                                        Text("\(countdownTimer) seconds left")
+                                        
+                                            .onReceive(timer) { _ in
+                                                if countdownTimer > 0 && timerRunning {
+                                                    countdownTimer -= 1
+                                                } else {
+                                                    timerRunning = false
+                                                }
+                                            }
+                                            .font(Font.custom("GhoulishFrightAOE", size: 30))
+                                            .foregroundColor(.red)
+                                            .offset(y: 200)
+                                    }
+                                    else{
+                                        Text("\(countdownTimer) second left")
+                                        
+                                            .onReceive(timer) { _ in
+                                                if countdownTimer > 0 && timerRunning {
+                                                    countdownTimer -= 1
+                                                } else {
+                                                    timerRunning = false
+                                                }
+                                            }
+                                            .font(Font.custom("GhoulishFrightAOE", size: 30))
+                                            .foregroundColor(.red)
+                                            .offset(y: 200)
+                                    }
+                                } else if countdownTimer > 30{
+                                    Text("\(countdownTimer) seconds left")
                                     
+                                        .onReceive(timer) { _ in
+                                            if countdownTimer > 0 && timerRunning {
+                                                countdownTimer -= 1
+                                            } else {
+                                                timerRunning = false
+                                            }
+                                        }
+                                        .font(Font.custom("GhoulishFrightAOE", size: 30))
+                                        .foregroundColor(.white)
+                                        .offset(y: 200)
+                                } else {
+                                    Text("FIND THEM")
                                         .onReceive(timer) { _ in
                                             if countdownTimer > 0 && timerRunning {
                                                 countdownTimer -= 1
@@ -257,72 +380,87 @@ struct EntityLinkView: View {
                                         .foregroundColor(.red)
                                         .offset(y: 200)
                                 }
-                            } else if countdownTimer > 30{
-                                Text("\(countdownTimer) seconds left")
-                                
-                                    .onReceive(timer) { _ in
-                                        if countdownTimer > 0 && timerRunning {
-                                            countdownTimer -= 1
-                                        } else {
-                                            timerRunning = false
-                                        }
-                                    }
-                                    .font(Font.custom("GhoulishFrightAOE", size: 30))
-                                    .foregroundColor(.white)
-                                    .offset(y: 200)
-                            } else {
-                                Text("FIND THEM")
-                                    .onReceive(timer) { _ in
-                                        if countdownTimer > 0 && timerRunning {
-                                            countdownTimer -= 1
-                                        } else {
-                                            timerRunning = false
-                                        }
-                                    }
-                                    .font(Font.custom("GhoulishFrightAOE", size: 30))
-                                    .foregroundColor(.red)
-                                    .offset(y: 200)
                             }
                         }
                         
                         if isButtonVisible == true {
-                            Button {
-                                timerHideRunning = true
-                                timerRunning = true
-                                isButtonVisible = false
-                                emmitToggle = true
-                            } label: {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 15)
-                                        .frame(width: 350, height: 50)
-                                        .padding()
-                                        .foregroundColor(Color("BrightPurple"))
-                                    Text("Click to Start")
-                                        .foregroundColor(.white)
-                                        .font(Font.custom("GhoulishFrightAOE", size: 30))
-                                }
-                            }
-                            .offset(y: 200)
                             
+                            if screenHeight<=667{
+                                Button {
+                                    timerHideRunning = true
+                                    timerRunning = true
+                                    isButtonVisible = false
+                                    emmitToggle = true
+                                    print(screenHeight)
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 15)
+                                            .frame(width: 350, height: 50)
+                                            .padding()
+                                            .foregroundColor(Color("BrightPurple"))
+                                        Text("Click to Start")
+                                            .foregroundColor(.white)
+                                            .font(Font.custom("GhoulishFrightAOE", size: 30))
+                                    }
+                                }.offset(y: 180)
+                            }else{
+                                Button {
+                                    timerHideRunning = true
+                                    timerRunning = true
+                                    isButtonVisible = false
+                                    emmitToggle = true
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 15)
+                                            .frame(width: 350, height: 50)
+                                            .padding()
+                                            .foregroundColor(Color("BrightPurple"))
+                                        Text("Click to Start")
+                                            .foregroundColor(.white)
+                                            .font(Font.custom("GhoulishFrightAOE", size: 30))
+                                    }
+                                }.offset(y: 200)
+                            }
                             
                         }
                         if countdownHideTimer != 0{
-                            Text("Preparation")
-                                .foregroundColor(.white)
-                                .font(Font.custom("GhoulishFrightAOE", size: 50))
-                                .offset(y: 140)
+                            if screenHeight<=667{
+                                Text("Preparation")
+                                    .foregroundColor(.white)
+                                    .font(Font.custom("GhoulishFrightAOE", size: 50))
+                                    .offset(y: 120)
+                            }else{
+                                Text("Preparation")
+                                    .foregroundColor(.white)
+                                    .font(Font.custom("GhoulishFrightAOE", size: 50))
+                                    .offset(y: 140)
+                            }
                         }
                         else if countdownHideTimer == 0 && countdownTimer == 0 {
-                            Text("Hunt")
-                                .foregroundColor(.white)
-                                .font(Font.custom("GhoulishFrightAOE", size: 50))
-                                .offset(y: 140)
+                            if screenHeight<=667{
+                                Text("Hunt")
+                                    .foregroundColor(.white)
+                                    .font(Font.custom("GhoulishFrightAOE", size: 50))
+                                    .offset(y: 120)
+                            }else{
+                                Text("Hunt")
+                                    .foregroundColor(.white)
+                                    .font(Font.custom("GhoulishFrightAOE", size: 50))
+                                    .offset(y: 140)
+                            }
                         }
                         else if countdownHideTimer == 0 && countdownTimer != 0 {
-                            Text("Investigation")
-                                .foregroundColor(.white)
-                                .font(Font.custom("GhoulishFrightAOE", size: 50))
-                                .offset(y: 140)
+                            if screenHeight<=667{
+                                Text("Investigation")
+                                    .foregroundColor(.white)
+                                    .font(Font.custom("GhoulishFrightAOE", size: 50))
+                                    .offset(y: 120)
+                            }else{
+                                Text("Investigation")
+                                    .foregroundColor(.white)
+                                    .font(Font.custom("GhoulishFrightAOE", size: 50))
+                                    .offset(y: 140)
+                            }
                         }
                         
                     }
@@ -459,6 +597,7 @@ class BeaconManagerLinkEntity: NSObject, CLLocationManagerDelegate, CBPeripheral
 
 struct EntityLinkView_Previews: PreviewProvider {
     static var previews: some View {
-        EntityLinkView(entityToggle: .constant(false))
+        EntityLinkView(entityToggle: .constant(true))
+
     }
 }

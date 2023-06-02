@@ -86,7 +86,6 @@ struct InvestigatorView: View {
                 .ignoresSafeArea()
                 .aspectRatio(contentMode: .fill)
             
-            
             VStack{
                 ZStack {
                     if !investigatorToggle {
@@ -104,12 +103,21 @@ struct InvestigatorView: View {
                                     
                                 }
                             label:{
-                                Image(systemName: "chevron.left")
-                                    .resizable()
-                                    .foregroundColor(.purple)
-                                    .frame(width: 12, height: 21)
-                                    .padding(.top, screenHeight/25)
-                                    .padding(.leading)
+                                if screenHeight<=667{
+                                    Image(systemName: "chevron.left")
+                                        .resizable()
+                                        .foregroundColor(.purple)
+                                        .frame(width: 12, height: 21)
+                                        .padding(.top, screenHeight/4.5)
+                                        .padding(.leading)
+                                }else{
+                                    Image(systemName: "chevron.left")
+                                        .resizable()
+                                        .foregroundColor(.purple)
+                                        .frame(width: 12, height: 21)
+                                        .padding(.top, screenHeight/25)
+                                        .padding(.leading)
+                                }
                             }
                             .alert(isPresented: $showAlert) {
                                 Alert(
@@ -138,87 +146,171 @@ struct InvestigatorView: View {
                                 Spacer()
                             }.offset(y: -380)}
                         Spacer()
-                        VStack {
-                            HStack{
-                                if countdownHideTimer > 0{
-                                    Circle()
-                                        .foregroundColor(Color(hue: 0.40, saturation:0.70, brightness: 0.4))
+                        if screenHeight<=667{
+                            VStack {
+                                HStack{
+                                    if countdownHideTimer > 0{
+                                        Circle()
+                                            .foregroundColor(Color(hue: 0.40, saturation:0.70, brightness: 0.4))
+                                        
+                                        Circle()
+                                            .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.5))
+                                        Circle()
+                                            .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.5))
+                                        Circle()
+                                            .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.5))
+                                    }else{
+                                        if detector.lastDistance.descriptionInvestigator == "UNKNOWN"{
+                                            Circle()
+                                                .foregroundColor(.green)
+                                                .shadow(color: Color.green.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.5))
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.5))
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.5))
+                                        }
+                                        else if detector.lastDistance.descriptionInvestigator == "FAR"{
+                                            Circle()
+                                                .foregroundColor(.green)
+                                                .shadow(color: Color.green.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.999))
+                                                .shadow(color: Color.yellow.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.5))
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.5))
+                                        }
+                                        else if detector.lastDistance.descriptionInvestigator == "NEAR"{
+                                            Circle()
+                                                .foregroundColor(.green)
+                                                .shadow(color: Color.green.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.999))
+                                                .shadow(color: Color.yellow.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.999))
+                                                .shadow(color: Color.orange.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.5))
+                                        }
+                                        else if detector.lastDistance.descriptionInvestigator == "IMMEDIATE"{
+                                            Circle()
+                                                .foregroundColor(.green)
+                                                .shadow(color: Color.green.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.999))
+                                                .shadow(color: Color.yellow.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.999))
+                                                .shadow(color: Color.orange.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.999))
+                                                .shadow(color: Color.red.opacity(1), radius: 10)
+                                        }
+                                        else {
+                                            Circle()
+                                                .foregroundColor(.green)
+                                                .shadow(color: Color.green.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.5))
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.5))
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.5))
+                                        }
+                                    }
                                     
-                                    Circle()
-                                        .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.5))
-                                    Circle()
-                                        .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.5))
-                                    Circle()
-                                        .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.5))
-                                }else{
-                                    if detector.lastDistance.descriptionInvestigator == "UNKNOWN"{
+                                    
+                                    
+                                }.padding()
+                                    .padding(.top, 75)
+                            }.position(x: screenWidth/2, y: (screenHeight)/5.8)
+                        }else{
+                            VStack {
+                                HStack{
+                                    if countdownHideTimer > 0{
                                         Circle()
-                                            .foregroundColor(.green)
-                                            .shadow(color: Color.green.opacity(1), radius: 10)
-                                        Circle()
-                                            .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.5))
-                                        Circle()
-                                            .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.5))
-                                        Circle()
-                                            .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.5))
-                                    }
-                                    else if detector.lastDistance.descriptionInvestigator == "FAR"{
-                                        Circle()
-                                            .foregroundColor(.green)
-                                            .shadow(color: Color.green.opacity(1), radius: 10)
-                                        Circle()
-                                            .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.999))
-                                            .shadow(color: Color.yellow.opacity(1), radius: 10)
-                                        Circle()
-                                            .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.5))
-                                        Circle()
-                                            .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.5))
-                                    }
-                                    else if detector.lastDistance.descriptionInvestigator == "NEAR"{
-                                        Circle()
-                                            .foregroundColor(.green)
-                                            .shadow(color: Color.green.opacity(1), radius: 10)
-                                        Circle()
-                                            .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.999))
-                                            .shadow(color: Color.yellow.opacity(1), radius: 10)
-                                        Circle()
-                                            .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.999))
-                                            .shadow(color: Color.orange.opacity(1), radius: 10)
-                                        Circle()
-                                            .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.5))
-                                    }
-                                    else if detector.lastDistance.descriptionInvestigator == "IMMEDIATE"{
-                                        Circle()
-                                            .foregroundColor(.green)
-                                            .shadow(color: Color.green.opacity(1), radius: 10)
-                                        Circle()
-                                            .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.999))
-                                            .shadow(color: Color.yellow.opacity(1), radius: 10)
-                                        Circle()
-                                            .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.999))
-                                            .shadow(color: Color.orange.opacity(1), radius: 10)
-                                        Circle()
-                                            .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.999))
-                                            .shadow(color: Color.red.opacity(1), radius: 10)
-                                    }
-                                    else {
-                                        Circle()
-                                            .foregroundColor(.green)
-                                            .shadow(color: Color.green.opacity(1), radius: 10)
+                                            .foregroundColor(Color(hue: 0.40, saturation:0.70, brightness: 0.4))
+                                        
                                         Circle()
                                             .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.5))
                                         Circle()
                                             .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.5))
                                         Circle()
                                             .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.5))
+                                    }else{
+                                        if detector.lastDistance.descriptionInvestigator == "UNKNOWN"{
+                                            Circle()
+                                                .foregroundColor(.green)
+                                                .shadow(color: Color.green.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.5))
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.5))
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.5))
+                                        }
+                                        else if detector.lastDistance.descriptionInvestigator == "FAR"{
+                                            Circle()
+                                                .foregroundColor(.green)
+                                                .shadow(color: Color.green.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.999))
+                                                .shadow(color: Color.yellow.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.5))
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.5))
+                                        }
+                                        else if detector.lastDistance.descriptionInvestigator == "NEAR"{
+                                            Circle()
+                                                .foregroundColor(.green)
+                                                .shadow(color: Color.green.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.999))
+                                                .shadow(color: Color.yellow.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.999))
+                                                .shadow(color: Color.orange.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.5))
+                                        }
+                                        else if detector.lastDistance.descriptionInvestigator == "IMMEDIATE"{
+                                            Circle()
+                                                .foregroundColor(.green)
+                                                .shadow(color: Color.green.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.999))
+                                                .shadow(color: Color.yellow.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.999))
+                                                .shadow(color: Color.orange.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.999))
+                                                .shadow(color: Color.red.opacity(1), radius: 10)
+                                        }
+                                        else {
+                                            Circle()
+                                                .foregroundColor(.green)
+                                                .shadow(color: Color.green.opacity(1), radius: 10)
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.10, saturation: 0.70, brightness: 0.5))
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.03, saturation: 0.70, brightness: 0.5))
+                                            Circle()
+                                                .foregroundColor(Color(hue: 0.00, saturation: 0.70, brightness: 0.5))
+                                        }
                                     }
-                                }
-                                
-                                
-                                
-                            }.padding()
-                                .padding(.top, 75)
-                        }.position(x: screenWidth/2, y: (screenHeight)/7.5)
+                                    
+                                    
+                                    
+                                }.padding()
+                                    .padding(.top, 75)
+                            }.position(x: screenWidth/2, y: (screenHeight)/7.5)
+                        }
                         
                         Spacer()
                         ZStack {
@@ -484,6 +576,7 @@ class BeaconManagerInvestigator: NSObject, CLLocationManagerDelegate, CBPeripher
 
 struct InvestigatorView_Previews: PreviewProvider {
     static var previews: some View {
-        InvestigatorView(investigatorToggle: .constant(false))
+        InvestigatorView(investigatorToggle: .constant(true))
+            
     }
 }
